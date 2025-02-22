@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Personal portfolio of Adrian Aquino">
+    <meta name="keywords" content="portfolio, full-stack, student">
+    <meta name="author" content="Adrian Aquino">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/portfoliofavicon.png">
     <title>Adrian Aquino - Portfolio</title>
 </head>
 
 
 <!-- header -->
 <body>
-    <header>
-        <img src="assets/IMG_6496.png" alt="Adrian Aquino's profile picture" width="300">
-        <h1>Adrian Aquino</h1>
+<header>
+    <img src="assets/IMG_6496.png" alt="Adrian Aquino's profile picture" width="300">
+    <h1>Adrian Aquino</h1>
 
     <!-- navigation for sections -->
     <nav>
@@ -19,13 +24,14 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#extracurricular">Extracurricular</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    </header>
+</header>
 
 
-    <!-- sections -->
+<!-- sections -->
 <main>
     <!-- about me section -->
     <section id="about">
@@ -40,9 +46,22 @@
             I was born in San Francisco and raised in the Bay Area, specifically in Daly City. Growing up in a
             diverse and tech-driven environment has made me interested in software development and problem-solving.
         </p>
-        <img src="assets/dalycity.png" alt="Daly City" width="300">
-    </section>
+        <img src="assets/dalycity.png" alt="Daly City" width="600">
 
+        <!-- Google Maps iframe of Daly City -->
+        <iframe
+                width="425"
+                height="350"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-122.52038955688478%2C37.647878727904676%2C-122.40709304809572%2C37.70888081499194&amp;layer=mapnik"
+                style="border: 1px solid black">
+        </iframe>
+        <br>
+        <small>
+            <a href="https://www.openstreetmap.org/?#map=14/37.67839/-122.46374">
+                View Larger Map
+            </a>
+        </small>
+    </section>
 
 
     <!-- skills section -->
@@ -66,7 +85,8 @@
         <h2>Education</h2>
         <img src="assets/sfsulogo.png" alt="SFSU Logo" width="150">
         <p>
-            San Francisco State University <br> Expected Graduation: Dec 2026
+            San Francisco State University <br>
+            Expected Graduation: Dec 2026
         </p>
 
 
@@ -108,18 +128,13 @@
                 <td>Spring 2025 (In Progress)</td>
             </tr>
         </table>
-
-
-
-
-
     </section>
 
 
     <!-- projects section -->
     <section id="projects">
         <h2>Projects</h2>
-        <ul>
+        <div class="projects-container">
             <article>
                 <h3><a href="https://github.com/ianaqui/Cache-Manager">Cache Manager</a></h3>
                 <p>A high-performance C++ cache manager that combines a doubly linked list for LRU eviction,
@@ -142,7 +157,37 @@
                 <p>Simple Java program to help you choose which Asian country to visit based on your travel
                     preferences, budget, and interests.</p>
             </article>
-        </ul>
+        </div>
+    </section>
+
+
+    <!-- extracurricular section -->
+    <section id="extracurricular">
+        <h2>Extracurricular & Hobbies</h2>
+        <article>
+            <h3>Coursera</h3>
+            <p>Meta Front-End Developer Professional Certificate <br>In Progress</p>
+        </article>
+        <article>
+            <h3>Gaming</h3>
+            <p>In my free time, I enjoy playing video games. The games that I mostly play are
+                Valorant, World of Warcraft, and League of Legends. </p>
+        </article>
+
+        <article>
+            <h3>Music</h3>
+            <p>I also enjoy listening to music. I mostly listen to K-pop, K-R&B, and EDM.
+                <br>Here is one of favorite songs:</p>
+
+            <!-- embedded content -->
+            <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/jOTfBlKSQYY"
+                    title="YouTube music video"
+                    allowfullscreen>
+            </iframe>
+        </article>
     </section>
 
 
@@ -155,20 +200,10 @@
                 <a href="https://github.com/ianaqui">GitHub</a> |
                 <a href="https://www.linkedin.com/in/ianaqui/">LinkedIn</a>
             </p>
+            <p>&copy; 2024 Adrian Aquino &bull; All rights reserved</p>
         </section>
     </footer>
-
-
-
-
-
-
-
-
-
 </main>
 
 </body>
-
-
 </html>

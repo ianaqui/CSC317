@@ -1,0 +1,551 @@
+/* Racing Theme CSS for Adrian Aquino's Portfolio
+ * Inspired by Formula 1 night race aesthetics with
+ * vibrant red lighting, dark backgrounds, and dynamic elements
+ */
+
+/* ===== Variables ===== */
+:root {
+    /* Main color palette from the racing image */
+    --dark-bg: #050811;
+    --dark-blue: #0e1525;
+    --medium-blue: #1c2b43;
+    --light-blue: #3a6ea5;
+    --accent-red: #ff3030;
+    --accent-orange: #ff6a3a;
+    --smoke-white: #f2f2f2;
+    --text-white: #ffffff;
+    --etihad-blue: #00769a;
+
+    /* Typography */
+    --main-font: 'Montserrat', system-ui, sans-serif;
+    --heading-font: 'Montserrat', system-ui, sans-serif;
+
+    /* Spacing */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Shadows and Effects */
+    --glow-effect: 0 0 10px var(--accent-red), 0 0 20px rgba(255, 48, 48, 0.5);
+    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-font);
+    color: var(--text-white);
+    background-color: var(--dark-bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Racing light trails background effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+            radial-gradient(circle at 75% 25%, #ff303022 0%, transparent 50%),
+            linear-gradient(45deg, #050811 0%, #0e1525 100%);
+    z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: var(--space-lg);
+}
+
+/* Section heading red underline effect */
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-red), transparent);
+}
+
+p {
+    margin-bottom: var(--space-md);
+}
+
+a {
+    color: var(--accent-red);
+    text-decoration: none;
+    position: relative;
+}
+
+a:hover {
+    color: var(--accent-orange);
+    text-shadow: var(--glow-effect);
+}
+
+/* Animated underline for links */
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-red);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ===== Header and Navigation ===== */
+header {
+    background: linear-gradient(to bottom, rgba(14, 21, 37, 0.95), rgba(5, 8, 17, 0.8));
+    padding: var(--space-lg) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero effect inspired by the racing image */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+            radial-gradient(circle at 75% 25%, rgba(255, 48, 48, 0.15) 0%, transparent 70%),
+            radial-gradient(circle at 25% 75%, rgba(255, 106, 58, 0.1) 0%, transparent 70%);
+    z-index: -1;
+}
+
+header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto var(--space-md);
+    border: 4px solid var(--accent-red);
+    box-shadow: var(--glow-effect);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--text-white), var(--accent-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+nav {
+    margin-top: var(--space-lg);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+nav a {
+    color: var(--text-white);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    background-color: rgba(255, 48, 48, 0.2);
+    color: var(--text-white);
+    box-shadow: 0 0 10px rgba(255, 48, 48, 0.3);
+}
+
+/* ===== Main Content ===== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md);
+}
+
+section {
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg);
+    background-color: rgba(14, 21, 37, 0.8);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section accent lighting effect */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-orange), transparent);
+}
+
+/* ===== About Section ===== */
+#about p {
+    max-width: 800px;
+    margin-bottom: var(--space-md);
+}
+
+.image-map-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-lg) 0;
+}
+
+.image-map-container iframe,
+.image-map-container img {
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    max-width: 100%;
+}
+
+/* ===== Skills Section ===== */
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+#skills li {
+    background: linear-gradient(145deg, var(--medium-blue), var(--dark-blue));
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-left: 3px solid var(--accent-red);
+}
+
+#skills li:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow-effect);
+    background: linear-gradient(145deg, var(--dark-blue), var(--medium-blue));
+}
+
+/* ===== Education Section ===== */
+#education {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#education img {
+    align-self: center;
+    margin-bottom: var(--space-md);
+}
+
+#education table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-md);
+}
+
+#education th,
+#education td {
+    padding: var(--space-sm) var(--space-md);
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#education th {
+    background-color: rgba(255, 48, 48, 0.1);
+    color: var(--accent-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#education tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Projects Section ===== */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.projects-container article {
+    background: linear-gradient(135deg, var(--dark-blue), var(--medium-blue));
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    border-left: 3px solid var(--accent-red);
+    position: relative;
+}
+
+.projects-container article::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 48, 48, 0.05), transparent);
+    z-index: 0;
+}
+
+.projects-container article:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 48, 48, 0.3);
+}
+
+.projects-container a {
+    display: block;
+    padding: var(--space-lg);
+    color: var(--text-white);
+    position: relative;
+    z-index: 1;
+}
+
+.projects-container h3 {
+    color: var(--accent-red);
+    margin-bottom: var(--space-sm);
+}
+
+.projects-container p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ===== Extracurricular Section ===== */
+#extracurricular article {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#extracurricular article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#extracurricular h3 {
+    color: var(--accent-red);
+}
+
+#extracurricular iframe {
+    margin-top: var(--space-md);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    max-width: 100%;
+}
+
+/* ===== Contact Section & Footer ===== */
+footer {
+    background: linear-gradient(to top, var(--dark-bg), var(--dark-blue));
+    padding: var(--space-lg);
+    text-align: center;
+    border-radius: 8px;
+}
+
+footer a {
+    margin: 0 var(--space-sm);
+}
+
+footer p {
+    margin-top: var(--space-md);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== Theme Switcher ===== */
+.theme-switcher {
+    background: linear-gradient(135deg, var(--dark-blue), var(--medium-blue));
+    border: 1px solid rgba(255, 48, 48, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.theme-button {
+    background: var(--dark-bg);
+    color: var(--text-white);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-button:hover {
+    background: var(--medium-blue);
+    border-color: var(--accent-red);
+}
+
+.theme-button.active {
+    background: var(--accent-red);
+    border-color: var(--accent-red);
+    color: var(--text-white);
+}
+
+/* ===== Animations ===== */
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Animate sections as they come into view */
+section {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header img {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    section {
+        padding: var(--space-md);
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    #extracurricular iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        margin: var(--space-lg) 0;
+        padding: var(--space-md);
+    }
+
+    .image-map-container iframe,
+    .image-map-container img {
+        width: 100%;
+    }
+}
+
+/* ===== Special Effects ===== */
+/* Subtle racing stripe on scroll */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--accent-red), var(--accent-orange));
+    border-radius: 5px;
+}
+
+/* Speed lines on hover for certain elements */
+#skills li:hover::before,
+.projects-container article:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-30deg);
+    animation: speedLine 1s forwards;
+}
+
+@keyframes speedLine {
+    to { left: 120%; }
+}
+
+/* Racing flag checkered pattern for specific hover states */
+nav a:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+            linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+            linear-gradient(-45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.05) 75%),
+            linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.05) 75%);
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    z-index: -1;
+}

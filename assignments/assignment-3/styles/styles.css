@@ -1,0 +1,324 @@
+/* 1. Global Styles & Variables */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-color: #333;
+  --light-text: #666;
+  --white: #fff;
+  --border-color: #ddd;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+
+  --border-radius: 5px;
+  --transition-speed: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Typography */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* 3. Layout & Header */
+header {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid black;
+  margin-bottom: var(--spacing-md);
+}
+
+header h1 {
+  color: var(--white);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* 4. Navigation */
+nav {
+  background-color: var(--secondary-color);
+  padding: var(--spacing-sm);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  border-radius: var(--border-radius);
+}
+
+nav ul li a:hover {
+  background-color: var(--white);
+  color: var(--secondary-color);
+}
+
+/* 5. Main Content Sections */
+section {
+  padding: var(--spacing-lg) var(--spacing-sm);
+  margin: var(--spacing-sm) 0;
+  background-color: var(--white);
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  padding-bottom: var(--spacing-xs);
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+/* 6. About Section */
+#about p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-map-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) auto;
+  max-width: 1200px;
+}
+
+.image-map-container img,
+.image-map-container iframe {
+  max-width: 100%;
+  border-radius: var(--border-radius);
+}
+
+#about small {
+  display: block;
+  text-align: center;
+  margin-top: var(--spacing-xs);
+}
+
+/* 7. Skills Section */
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+#skills li {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 20px;
+  transition: transform var(--transition-speed), background-color var(--transition-speed);
+}
+
+#skills li:hover {
+  transform: translateY(-2px);
+  background-color: var(--primary-color);
+}
+
+/* 8. Education Section */
+#education {
+  text-align: center;
+}
+
+#education img {
+  display: block;
+  margin: 0 auto var(--spacing-md);
+  max-width: 150px;
+}
+
+#education table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+#education th, #education td {
+  padding: var(--spacing-xs);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#education th {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+/* 9. Projects Section */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-container article {
+  flex: 1 1 300px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  border: 1px solid var(--border-color);
+}
+
+.projects-container article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.projects-container article a {
+  display: block;
+  height: 100%;
+}
+
+.projects-container h3 {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* 10. Extracurricular Section */
+#extracurricular article {
+  margin-bottom: var(--spacing-md);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#extracurricular h3 {
+  margin-bottom: var(--spacing-xs);
+  color: var(--primary-color);
+}
+
+#extracurricular iframe {
+  display: block;
+  margin: var(--spacing-sm) auto;
+  max-width: 100%;
+  border-radius: var(--border-radius);
+}
+
+/* 11. Contact Section */
+#contact {
+  text-align: center;
+}
+
+#contact p {
+  margin-bottom: var(--spacing-sm);
+}
+
+#contact a {
+  display: inline-block;
+  margin: 0 var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: color var(--transition-speed);
+}
+
+#contact a:hover {
+  color: var(--primary-color);
+}
+
+/* 12. Footer */
+footer {
+  background-color: var(--primary-color);
+  color: black;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+footer p {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* 13. Responsive Design */
+@media (min-width: 768px) {
+  .projects-container article {
+    flex: 0 1 calc(50% - var(--spacing-md));
+  }
+
+  #education table {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 992px) {
+  .projects-container article {
+    flex: 0 1 calc(33.33% - var(--spacing-md));
+  }
+
+  nav ul {
+    gap: var(--spacing-md);
+  }
+
+  #about p {
+    font-size: 1.1rem;
+  }
+}

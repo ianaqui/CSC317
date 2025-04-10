@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Calculator</title>
+    <link rel="stylesheet" href="styles/calculator.css">
+</head>
+<body>
+<!-- Calculator container -->
+<div class="calculator">
+    <!-- Previous calculation display -->
+    <div class="top-display">
+        <div class="calculation"></div>
+    </div>
+
+    <!-- Main display -->
+    <div class="display">
+        <div id="output">0</div>
+    </div>
+
+    <!-- Button grid -->
+    <div class="buttons">
+        <!-- Utility buttons -->
+        <button class="button utility-button" id="clear">AC</button>
+        <button class="button utility-button" id="sign">+/-</button>
+        <button class="button utility-button" id="percent">%</button>
+
+        <!-- Operation buttons -->
+        <button class="button operation-button">÷</button>
+
+        <!-- Number buttons -->
+        <button class="button number-button">7</button>
+        <button class="button number-button">8</button>
+        <button class="button number-button">9</button>
+        <button class="button operation-button">×</button>
+
+        <button class="button number-button">4</button>
+        <button class="button number-button">5</button>
+        <button class="button number-button">6</button>
+        <button class="button operation-button">-</button>
+
+        <button class="button number-button">1</button>
+        <button class="button number-button">2</button>
+        <button class="button number-button">3</button>
+        <button class="button operation-button">+</button>
+
+        <button class="button number-button">0</button>
+        <button class="button number-button">.</button>
+        <button class="button operation-button">=</button>
+
+        <!-- Layout spacer -->
+        <div class="blank-circle"></div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="scripts/calculator.js"></script>
+</body>
+</html>

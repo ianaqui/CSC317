@@ -1,0 +1,607 @@
+/* 1. Global Styles & Variables */
+:root {
+    /* Mercedes-AMG Petronas F1 Color Palette */
+    --dark-bg: #000000;
+    --merc-silver: #6cd3bf;
+    --merc-teal: #00A19C;
+    --merc-cyan: #00CFBD;
+    --merc-dark: #0E1525;
+    --merc-gray: #333333;
+    --merc-light-gray: #cccccc;
+    --text-white: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+
+    /* Effects */
+    --glow-effect: 0 0 10px var(--merc-cyan), 0 0 20px rgba(0, 207, 189, 0.5);
+    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    --border-radius: 8px;
+    --transition-speed: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Typography */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-white);
+    background-color: var(--dark-bg);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Mercedes racing theme background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+            radial-gradient(circle at 75% 25%, rgba(0, 207, 189, 0.1) 0%, transparent 50%),
+            linear-gradient(45deg, var(--dark-bg) 0%, var(--merc-dark) 100%);
+    z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-white);
+    display: inline-block;
+}
+
+/* Section heading underline effect */
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--merc-cyan), transparent);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--merc-cyan);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+    position: relative;
+}
+
+a:hover {
+    color: var(--merc-silver);
+    text-shadow: 0 0 5px rgba(0, 207, 189, 0.5);
+}
+
+/* Animated underline for links from Night Race theme */
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--merc-cyan);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+/* 3. Layout & Header */
+header {
+    background: linear-gradient(to bottom, rgba(14, 21, 37, 0.95), rgba(5, 8, 17, 0.8));
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mercedes racing stripe accent */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-color: var(--merc-cyan);
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 0;
+    opacity: 0.7;
+}
+
+header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto var(--spacing-md);
+    border: 4px solid var(--merc-cyan);
+    box-shadow: var(--glow-effect);
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-white);
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* 4. Navigation */
+nav {
+    background: linear-gradient(to right, var(--merc-dark), var(--merc-teal), var(--merc-dark));
+    padding: var(--spacing-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+nav ul li a {
+    color: var(--text-white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: var(--merc-cyan);
+    text-shadow: 0 0 10px rgba(0, 207, 189, 0.5);
+}
+
+/* 5. Main Content Sections */
+section {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    background-color: rgba(14, 21, 37, 0.8);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Section accent lighting effect */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--merc-teal), var(--merc-cyan), transparent);
+}
+
+/* 6. About Section */
+#about p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-map-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin: var(--spacing-md) auto;
+}
+
+.image-map-container iframe,
+.image-map-container img {
+    flex: 1;
+    max-width: 45%;
+    min-width: 300px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.image-map-container iframe:hover,
+.image-map-container img:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow-effect);
+}
+
+#about small {
+    display: block;
+    text-align: center;
+    margin-top: var(--spacing-xs);
+    width: 100%;
+}
+
+/* 7. Skills Section */
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+#skills li {
+    background: linear-gradient(145deg, var(--merc-dark), var(--merc-gray));
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border-left: 3px solid var(--merc-cyan);
+    position: relative;
+}
+
+#skills li:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow-effect);
+    background: linear-gradient(145deg, var(--merc-gray), var(--merc-dark));
+}
+
+/* 8. Education Section */
+#education {
+    text-align: center;
+}
+
+#education img {
+    display: block;
+    margin: 0 auto var(--spacing-md);
+    max-width: 150px;
+}
+
+#education table {
+    width: 100%;
+    max-width: 800px;
+    margin: var(--spacing-md) auto 0;
+    border-collapse: collapse;
+}
+
+#education th,
+#education td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#education th {
+    background-color: rgba(0, 207, 189, 0.1);
+    color: var(--merc-cyan);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#education tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 9. Projects Section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.projects-container article {
+    background: linear-gradient(135deg, var(--merc-dark), var(--merc-gray));
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    border-left: 3px solid var(--merc-cyan);
+    position: relative;
+}
+
+.projects-container article::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 207, 189, 0.05), transparent);
+    z-index: 0;
+}
+
+.projects-container article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 207, 189, 0.3);
+}
+
+.projects-container a {
+    display: block;
+    padding: var(--spacing-md);
+    color: var(--text-white);
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.projects-container h3 {
+    color: var(--merc-cyan);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* 10. Extracurricular Section */
+#extracurricular article {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#extracurricular article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#extracurricular h3 {
+    color: var(--merc-cyan);
+    margin-bottom: var(--spacing-xs);
+}
+
+#extracurricular iframe {
+    display: block;
+    margin: var(--spacing-sm) auto;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+/* 11. Contact Section */
+footer {
+    background: linear-gradient(to top, var(--dark-bg), var(--merc-dark));
+    color: var(--text-white);
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+footer h2 {
+    color: var(--text-white);
+}
+
+footer h2::after {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+footer a {
+    margin: 0 var(--spacing-xs);
+}
+
+footer p {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* 12. Theme Switcher */
+.theme-switcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #0e1525, #1c2b43);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    z-index: 1000;
+    border: 1px solid #00CFBD;
+}
+
+.theme-switcher h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.theme-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.theme-button {
+    padding: 8px 12px;
+    background: #050811;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.theme-button:hover {
+    background: #1c2b43;
+    border-color: #00CFBD;
+    box-shadow: 0 0 8px rgba(0, 207, 189, 0.4);
+}
+
+.theme-button.active {
+    background: #00CFBD;
+    border-color: #00CFBD;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* 13. Animations & Effects */
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Speed lines effect for hovering skill items */
+#skills li:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-30deg);
+    animation: speedLine 1s forwards;
+}
+
+@keyframes speedLine {
+    to { left: 120%; }
+}
+
+/* Custom scrollbar with racing stripe */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--merc-cyan), var(--merc-teal));
+    border-radius: 5px;
+}
+
+/* 14. Responsive Design */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    header img {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .image-map-container {
+        flex-direction: column;
+    }
+
+    .image-map-container iframe,
+    .image-map-container img {
+        max-width: 100%;
+    }
+
+    #extracurricular iframe {
+        height: 250px;
+    }
+
+    .theme-switcher {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .theme-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: var(--spacing-sm);
+    }
+}

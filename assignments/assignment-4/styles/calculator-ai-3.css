@@ -1,0 +1,194 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Page layout - Mercedes-AMG theme */
+body {
+    background-color: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-white);
+    position: relative;
+    overflow: hidden;
+}
+
+:root {
+    --dark-bg: #000000;
+    --merc-silver: #6cd3bf;
+    --merc-teal: #00A19C;
+    --merc-cyan: #00CFBD;
+    --merc-dark: #0E1525;
+    --merc-gray: #333333;
+    --merc-light-gray: #cccccc;
+    --text-white: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glow-effect: 0 0 10px var(--merc-cyan), 0 0 20px rgba(0, 207, 189, 0.5);
+    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mercedes racing theme background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+            radial-gradient(circle at 75% 25%, rgba(0, 207, 189, 0.1) 0%, transparent 50%),
+            linear-gradient(45deg, var(--dark-bg) 0%, var(--merc-dark) 100%);
+    z-index: -1;
+}
+
+/* Calculator container */
+.calculator {
+    background: linear-gradient(145deg, var(--merc-dark), var(--merc-gray));
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border-left: 3px solid var(--merc-cyan);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Calculator accent lighting */
+.calculator::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--merc-teal), var(--merc-cyan), transparent);
+}
+
+/* Previous calculation area */
+.top-display {
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Calculation history */
+.calculation {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+    text-align: right;
+    width: 100%;
+}
+
+/* Main display area */
+.display {
+    height: 120px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 15px;
+}
+
+/* Current number display */
+#output {
+    font-size: 66px;
+    color: var(--text-white);
+    text-align: right;
+    width: 100%;
+}
+
+/* Button grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 5px;
+}
+
+/* Base button style */
+.button {
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    height: 65px;
+    width: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-white);
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, var(--merc-dark), var(--merc-gray));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Utility button style */
+.utility-button {
+    background: linear-gradient(145deg, #757575, #555555);
+    color: var(--text-white);
+}
+
+/* Number button style */
+.number-button {
+    background: linear-gradient(145deg, #292929, #1e1e1e);
+}
+
+/* Operation button style */
+.operation-button {
+    background: linear-gradient(145deg, var(--merc-cyan), var(--merc-teal));
+    color: var(--dark-bg);
+    font-weight: bold;
+}
+
+/* Button hover effect */
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--glow-effect);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+/* Layout spacer */
+.blank-circle {
+    background: linear-gradient(145deg, #292929, #1e1e1e);
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    grid-column: 1;
+    grid-row: 5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Back link styling */
+.back-link a {
+    color: var(--merc-cyan);
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    color: var(--merc-silver);
+    text-shadow: 0 0 5px rgba(0, 207, 189, 0.5);
+}
+
+/* Theme switcher styling */
+.theme-switcher {
+    background: linear-gradient(135deg, #0e1525, #1c2b43);
+    border: 1px solid var(--merc-cyan);
+}
+
+.theme-button.active {
+    background: var(--merc-cyan);
+    color: var(--dark-bg);
+}

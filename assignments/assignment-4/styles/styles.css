@@ -242,6 +242,20 @@ section h2::after {
   margin-bottom: var(--spacing-xs);
 }
 
+/* Project image styling */
+.projects-container article a img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-speed);
+}
+
+.projects-container article:hover img {
+  transform: scale(1.05);
+}
+
 /* 10. Extracurricular Section */
 #extracurricular article {
   margin-bottom: var(--spacing-md);
@@ -272,53 +286,4 @@ section h2::after {
 }
 
 #contact a {
-  display: inline-block;
-  margin: 0 var(--spacing-xs);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  transition: color var(--transition-speed);
-}
-
-#contact a:hover {
-  color: var(--primary-color);
-}
-
-/* 12. Footer */
-footer {
-  background-color: var(--primary-color);
-  color: black;
-  text-align: center;
-  padding: var(--spacing-md);
-}
-
-footer p {
-  margin-bottom: var(--spacing-xs);
-}
-
-/* 13. Responsive Design */
-@media (min-width: 768px) {
-  .projects-container article {
-    flex: 0 1 calc(50% - var(--spacing-md));
-  }
-
-  #education table {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: var(--spacing-lg);
-  }
-}
-
-@media (min-width: 992px) {
-  .projects-container article {
-    flex: 0 1 calc(33.33% - var(--spacing-md));
-  }
-
-  nav ul {
-    gap: var(--spacing-md);
-  }
-
-  #about p {
-    font-size: 1.1rem;
-  }
-}
+  display:

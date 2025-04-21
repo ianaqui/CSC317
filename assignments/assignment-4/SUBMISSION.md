@@ -8,14 +8,18 @@ Assignment Number: 4
 - GitHub Repository: https://github.com/ianaqui/CSC317
 - GitHub Pages URL: https://ianaqui.github.io/CSC317/assignments/assignment-4/index.html
 
-## Implementation Overview
-I made a calculator that looks like the iOS calculator. It does basic math (add, subtract, multiply, divide) and has extra features like percentages, sign changing, and decimals. It has a dark background with orange operation buttons just like iOS. Users can click buttons or use their keyboard to enter numbers and operations. The calculator handles errors like division by zero and shows big numbers in scientific format. I added the calculator to my portfolio with a description and link. There's a back button to return to the portfolio. I also created a theme switcher with four designs that saves your choice when you return later.
+## Implementation
+I created a calculator that looks like the iOS Calculator app. I created it to have the same basic functions such as addition, subtraction, multiplication, division. I also added functions such as converting to percentages, sign toggle, support for decimals. I also added a feature to deal with errors, such as dividing by zero and the calculator will display "Error". I added a feature for keyboard input, so that the calculator will work with both keyboard and mouse button clicks. I created my CSS file to be themed like the iOS Calculator app. I chose the same colors and design.
 
-## Challenges and Solutions
-The main challenge was tracking calculator math operations in order. I fixed this by using variables to keep track of numbers and operations. I also had to handle errors like division by zero.
+## Challenges
+The hardest challenge when creating this assingment was tracking math operations in the correct order. The way I fixed this is by using variables to keep track of numbers and operations. 
 
 ## Additional Features
-- Theme Switcher: Four different looks for the calculator
+Theme Switcher:
+Allows you to switch with the iOS Calculator style, and 3 other themes similar to my portfolio's 4 themes. 
+Ai Theme 1 is themed after McLaren.
+Ai Theme 2 is themed after Redbull Racing.
+Ai Theme 3 is themed after Mercedes Petronas.
 
 ## Resources Used
-- iOS Calculator app for design ideas
+iOS Calculator app for design ideas

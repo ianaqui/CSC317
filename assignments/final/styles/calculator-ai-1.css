@@ -1,0 +1,153 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page layout - McLaren F1 theme */
+body {
+    background-color: var(--dark-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+:root {
+    --mclaren-orange: #FF8700;
+    --mclaren-blue: #0090D4;
+    --dark-gray: #222222;
+    --light-gray: #f0f0f0;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+/* Calculator container */
+.calculator {
+    background-color: var(--black);
+    width: 100%;
+    max-width: 320px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--mclaren-orange);
+}
+
+/* Previous calculation area */
+.top-display {
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Calculation history */
+.calculation {
+    color: rgba(255,255,255,0.7);
+    font-size: 24px;
+    text-align: right;
+    width: 100%;
+}
+
+/* Main display area */
+.display {
+    height: 120px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+    border-bottom: 2px solid var(--mclaren-orange);
+}
+
+/* Current number display */
+#output {
+    font-size: 72px;
+    color: var(--white);
+    text-align: right;
+    width: 100%;
+}
+
+/* Button grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 15px 10px;
+}
+
+/* Base button style */
+.button {
+    border: none;
+    border-radius: 50%;
+    font-size: 32px;
+    height: 65px;
+    width: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--white);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Utility button style */
+.utility-button {
+    background-color: var(--light-gray);
+    color: var(--black);
+}
+
+/* Number button style */
+.number-button {
+    background-color: #3a3a3a;
+}
+
+/* Operation button style */
+.operation-button {
+    background-color: var(--mclaren-orange);
+    font-weight: bold;
+}
+
+/* Button hover effect */
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Button active effect */
+.button:active {
+    transform: translateY(1px);
+}
+
+/* Layout spacer */
+.blank-circle {
+    background-color: #3a3a3a;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    grid-column: 1;
+    grid-row: 5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Back link styling */
+.back-link a {
+    color: var(--mclaren-orange);
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    color: var(--mclaren-blue);
+}
+
+/* Theme switcher styling */
+.theme-switcher {
+    border: 2px solid var(--mclaren-orange);
+}
+
+.theme-button.active {
+    background-color: var(--mclaren-orange);
+}
